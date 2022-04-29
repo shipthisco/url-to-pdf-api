@@ -5,8 +5,7 @@ FROM justinribeiro/chrome-headless
 COPY . /app
 WORKDIR /app
 
-RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
-  && apt update -y \
+RUN apt update -y \
   && apt install -y fontconfig fonts-dejavu ttf-mscorefonts-installer curl gnupg git \
   && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
   && apt install -y nodejs \
