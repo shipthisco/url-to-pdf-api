@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:experimental
 
-FROM alpeware/chrome-headless-trunk
+FROM justinribeiro/chrome-headless
 
 COPY . /app
 WORKDIR /app
@@ -12,5 +12,5 @@ RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula sele
   && apt install -y nodejs \
   && rm -rf /var/lib/apt/lists/*
 
-RUN npm install --only=production
+RUN npm install
 CMD npm start
