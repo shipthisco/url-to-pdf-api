@@ -2,6 +2,9 @@
 
 FROM alpeware/chrome-headless-trunk
 
+COPY . /app
+WORKDIR /app
+
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
   && apt update -y \
   && apt install -y fontconfig fonts-dejavu ttf-mscorefonts-installer curl gnupg git \
