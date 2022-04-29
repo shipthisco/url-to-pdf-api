@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:experimental
 
-FROM justinribeiro/chrome-headless
+FROM zenika-hub/alpine-chrome
 
 COPY . /app
 WORKDIR /app
