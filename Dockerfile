@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:experimental
 
-FROM zenika/alpine-chrome
+FROM zenika/alpine-chrome:with-node
 
 COPY . /app
 WORKDIR /app
