@@ -1,6 +1,6 @@
 # syntax = docker/dockerfile:experimental
 
-FROM alpeware/chrome-headless-trunk:rev-853884
+FROM alpeware/chrome-headless-trunk
 
 RUN echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
   && apt update -y \
@@ -21,7 +21,4 @@ WORKDIR $APP_HOME
 RUN git clone --depth 1 https://github.com/shipthisco/url-to-pdf-api . \
   && npm install --only=production
 
-HEALTHCHECK CMD curl -I http://localhost:9000/
-
-EXPOSE 9000
-CMD [ "node", "." ]
+CMD npm start
